@@ -4,7 +4,7 @@ import MMT from '../../Logo/MMTLogo.png';
 import Flight from '../../Logo/flight.svg';
 import Hotels from '../../Logo/hotels.svg';
 import Train from '../../Logo/trn.png';
-import SignUp from '../SignUp/SignUp'
+//import SignUp from '../SignUp/SignUp'
 import { DataParentContext } from '../../App';
 
 import { Link } from 'react-router-dom';

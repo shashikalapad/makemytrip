@@ -3,7 +3,7 @@ import './App.css';
 import ApiFetch from './components/FetchData/ApiFetch';
 import Footer from './components/Footer/Footer.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
-import SearchContent from './components/Navbar/SearchContent.jsx';
+//import SearchContent from './components/Navbar/SearchContent.jsx';
 import TrainsApi from './components/FetchData/TrainsApi';
 import Hotels from './components/FetchData/Hotels.jsx';
 import NotFound from './components/NotFound.jsx';

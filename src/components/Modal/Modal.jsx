@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import ReactDom from 'react-dom';
+//import ReactDom from 'react-dom';
 import './Modal.css'
 import Payment from "../../Logo/payment.png"
 const Modal = ({setData,data,modelData,index,fakeString}) => {
@@ -16,10 +16,10 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
     const [Cardnum,setCardnum]=useState("");
     const [Exdate,setExdate]=useState(new Date());
     const [Cvv, setCvv] = useState("");
-    let isNamecardEntered = false;
-    let isCardnumEntered = false;
-    let isExdateEntered = false;
-    let isCvvEntered = false;
+    // let isNamecardEntered = false;
+    // let isCardnumEntered = false;
+    // let isExdateEntered = false;
+    // let isCvvEntered = false;
     const minDate = () => {
 
         const today = new Date().toISOString().split('T')[0];
@@ -52,7 +52,7 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
                     <div className='PaymentInput'>
                         <input type="text" placeholder='Name on Card' onSubmit={
                             ()=>{
-                                if(Namecard.length!=16){
+                                if(Namecard.length!==16){
                                     alert("valid name on card")
                                    }                               
                                 }         
