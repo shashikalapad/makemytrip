@@ -1,4 +1,7 @@
-.modalCss{
+.modalCss {
+    box-sizing: border-box;
+  }
+.modalCss {
     position: fixed;
     top: 0;
     left: 0;
@@ -50,4 +53,25 @@
 }
 .btnPay button{
     margin: 10px;
+}
+@media screen and (max-width:600px) {
+    .baseFare{        
+        font-size: 4px;     
+        margin: 5px;
+    }
+    .PaymentInput input{
+       
+        font-size: 4px;
+        word-spacing: 2px;
+        letter-spacing: 1px;
+        width: 230px;
+        padding: 1px;
+        margin: 1px;
+    }
+    .PaymentInput input {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    overflow-x: hidden;
+}
 }

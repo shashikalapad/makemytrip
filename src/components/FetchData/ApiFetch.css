@@ -1,3 +1,7 @@
+.ApiContentOuter{
+    box-sizing: border-box;
+  }
+  
 .ApiContentOuter {
     width: 100%;
     height: 300px;
@@ -57,4 +61,20 @@ span.font {
 #rupees{
     font-size: 22px;
     color: green;
+}
+@media screen and (max-width:600px) {
+    .ApiContentInner {  
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    overflow-x: hidden;
+}
+.BookBtn button{
+    padding: 8px;
+    font-size: 12px;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    overflow-x: hidden;
+}
 }

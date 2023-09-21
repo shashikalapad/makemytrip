@@ -9,11 +9,11 @@ const Login = ({setLoginDetails}) => {
     const navegate = useNavigate();
     // const localContext = useContext(DataParentContext);
     // const { LoginDetails, setLoginDetails } = localContext;
+        
    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    const LoginData = (e) => {
+        const LoginData = (e) => {
         e.preventDefault();
         if (email === localStorage.getItem("email") && password === localStorage.getItem("password")) {
             let obj = [{
@@ -52,7 +52,8 @@ const Login = ({setLoginDetails}) => {
                             <input type="password" placeholder='Enter Password' onChange={(e) => setPassword(e.target.value)} required /><br />
                         </div>
                         <button onClick={(e)=>LoginData(e)}>Log in</button>
-                        //if user doesnot loged in show the button otherwise hide
+                        {/* {showButton && <button onClick={toggleButton}></button>} */}
+                        {/* //if user doesnot loged in show the button otherwise hide */}
                         <p style={{ color: "rgb(13,110,253)", cursor: "pointer" }}>Forgot Password ?</p>
                     </div>
                 </div>
@@ -62,3 +63,20 @@ const Login = ({setLoginDetails}) => {
 }
 
 export default Login
+// import React, { useState } from 'react';
+
+// function App() {
+//     const [showButton, setShowButton] = useState(true);
+  
+//     const toggleButton = () => {
+//       setShowButton(!showButton);
+//     };
+  
+//     return (
+//       <div>
+//         {showButton && <button onClick={toggleButton}>Hide Button</button>}
+//       </div>
+//     );
+//   }
+  
+//   export default App;

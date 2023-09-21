@@ -73,9 +73,23 @@
     color: #ffffff;
   }
   
-  /* @media screen and (max-width: 55rem) {
+   /* @media screen and (max-width: 55rem) {
     .bm-burger-button {
-      display: none;
-    }
+     display:;
+    } 
   } */
+ 
+ 
+  @media screen and (min-width: 1200px) {
+    .bm-burger-button {
+      display:none;
+     } 
+    }
+    /* @media screen and (min-width:600px){
+      .bm-burger-button {
+        font-size:30px;
+      }
+    } */
+  
+  
   

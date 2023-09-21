@@ -1,4 +1,6 @@
-
+.NavbarContainer {
+    box-sizing: border-box;
+  } 
 
 .NavbarContainer {
     position: sticky;
@@ -50,3 +52,22 @@
     padding: 5px;
     background-color: blueviolet;
 }
+@media screen and (max-width:600px) {
+    
+    .logo {
+        padding-left:  4px;   
+    }
+    .navlinks {
+        padding: 4px;
+        font-size: calc(16px + 0.390625vw);  
+       
+    } 
+    .logo img {
+        top: 10px;
+        left:10px;
+        width: 50%;
+    }
+    
+    
+}
+
