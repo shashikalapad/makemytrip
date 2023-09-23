@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import './Login.css'
 import Facebook from '../../Logo/facebook.png'
 import Google from '../../Logo/Google.png'
@@ -6,13 +6,9 @@ import { Link } from 'react-router-dom';
 // import { DataParentContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 const Login = ({setLoginDetails}) => {
-    const navegate = useNavigate();
-    // const localContext = useContext(DataParentContext);
-    // const { LoginDetails, setLoginDetails } = localContext;
-        
-   
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+      const navegate = useNavigate(); 
+       const [email,setEmail] = useState("");
+       const [password,setPassword] = useState("");
         const LoginData = (e) => {
         e.preventDefault();
         if (email === localStorage.getItem("email") && password === localStorage.getItem("password")) {
@@ -51,10 +47,8 @@ const Login = ({setLoginDetails}) => {
                             <label htmlFor="" style={{ marginRight: "200px" }}>Password</label><br />
                             <input type="password" placeholder='Enter Password' onChange={(e) => setPassword(e.target.value)} required /><br />
                         </div>
-                        <button onClick={(e)=>LoginData(e)}>Log in</button>
-                        {/* {showButton && <button onClick={toggleButton}></button>} */}
-                        {/* //if user doesnot loged in show the button otherwise hide */}
-                        <p style={{ color: "rgb(13,110,253)", cursor: "pointer" }}>Forgot Password ?</p>
+                        <button onClick={(e)=>LoginData(e)}>Log in</button>                       
+                        <p style={{ color: "rgb(13,110,253)", cursor:"pointer" }}>Forgot Password ?</p>
                     </div>
                 </div>
             </div>
@@ -62,21 +56,4 @@ const Login = ({setLoginDetails}) => {
     )
 }
 
-export default Login
-// import React, { useState } from 'react';
-
-// function App() {
-//     const [showButton, setShowButton] = useState(true);
-  
-//     const toggleButton = () => {
-//       setShowButton(!showButton);
-//     };
-  
-//     return (
-//       <div>
-//         {showButton && <button onClick={toggleButton}>Hide Button</button>}
-//       </div>
-//     );
-//   }
-  
-//   export default App;
+export default Login;

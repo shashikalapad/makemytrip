@@ -44,7 +44,7 @@
 }
 
 .DashboardPortal {
-    padding-top: 20px;
+    padding-top: 50px;
     padding-right: 30px;
 }
 .btn-btn{
@@ -52,22 +52,25 @@
     padding: 5px;
     background-color: blueviolet;
 }
-@media screen and (max-width:600px) {
-    
-    .logo {
-        padding-left:  4px;   
-    }
+@media only screen and (max-width:600px) {  
+    .NavbarContainer {       
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        overflow-x: hidden;     
+    }        
     .navlinks {
-        padding: 4px;
-        font-size: calc(16px + 0.390625vw);  
-       
-    } 
-    .logo img {
-        top: 10px;
-        left:10px;
-        width: 50%;
-    }
-    
-    
+        display:none; 
+           
+    }    
+    .logo {
+        display:flex;
+        align-items:right;       
+        padding-left: 150px;
+        width:25%;
+        } 
+         img {
+            font-size: 10px;
+        }   
 }
 

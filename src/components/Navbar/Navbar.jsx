@@ -14,9 +14,7 @@ const Navbar = () => {
     //console.log("shiv",localContext)
    
     return (
-
-        <div  className='NavbarContainer'>
-         
+        <div  className='NavbarContainer'>         
             <div className="logo">
                 <Link to="">
                     <img src={MMT} alt="MMT-Logo" />
@@ -26,41 +24,10 @@ const Navbar = () => {
             <Link className="navlinks" to="/hotels"><img src={Hotels} alt="Hotels-logo" />Hotels</Link>
             <Link className="navlinks" to="/trains"><img src= {Train} alt="Train-logo" />Trains</Link>
             {localContext.LoginDetails.length===0 && <Link className="navlinks" to="/login">Log In</Link>}
-            <Link className="navlinks" to="/signUp">Sign Up</Link>
-            {!localStorage.getItem('email') && !localStorage.getItem('password') (
-                <><Link href="/Register">Register</Link><Link href="/Login">Login</Link></>
-          
-          )}
-
-
-
-
-            
+            <Link className="navlinks" to="/signUp">Sign Up</Link>  
             <div className='DashboardPortal'>
-            {localContext.LoginDetails.length>0 &&<button className='btn-btn'>{"Hi  "+localContext.LoginDetails[0].userName}</button>}
-            </div>
-        
-           
-          
-            </div>
-
-         
-         
-    )
-       
-    
-}
-
-export default Navbar
-
-// Navbar>
-//  <Nav.Item>
-//             <Nav.Link href="/Register">Register</Nav.Link>
-//           </Nav.Item>
-//           <Nav.Item>
-//             <Nav.Link href="/Login">Login</Nav.Link>
-//           </Nav.Item>
-// </Navbar>
-// I'm using local storage for the login:
-
-// localStorage.setItem("userID", user);
+            {localContext.LoginDetails.length>0&&<button className='btn-btn'>{"Hi  "+localContext.LoginDetails[0].userName}</button>}
+        </div>
+        </div>   
+    )}
+export default Navbar;

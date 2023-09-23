@@ -54,24 +54,30 @@
 .btnPay button{
     margin: 10px;
 }
-@media screen and (max-width:600px) {
-    .baseFare{        
-        font-size: 4px;     
-        margin: 5px;
-    }
-    .PaymentInput input{
+@media only screen and (max-width:600px) {  
+    .modalCss {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        overflow-x: hidden;         
+    }    
+     .PaymentInput input {    
        
-        font-size: 4px;
-        word-spacing: 2px;
-        letter-spacing: 1px;
-        width: 230px;
-        padding: 1px;
-        margin: 1px;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        overflow-x: hidden;     
     }
-    .PaymentInput input {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    overflow-x: hidden;
-}
-}
+  
+    .btnPay button{
+        margin:20px;
+        
+        overflow-x: hidden;     
+       
+    }
+    .btnPay{
+        text-align: center;
+        width:25%;
+        margin:auto;
+    }
+} 

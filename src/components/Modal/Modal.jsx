@@ -16,24 +16,17 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
     const [Cardnum,setCardnum]=useState("");
     const [Exdate,setExdate]=useState(new Date());
     const [Cvv, setCvv] = useState("");
-    // let isNamecardEntered = false;
-    // let isCardnumEntered = false;
-    // let isExdateEntered = false;
-    // let isCvvEntered = false;
-    const minDate = () => {
-
+        const minDate = ()=> {
         const today = new Date().toISOString().split('T')[0];
         console.log(today);
-        return today;
-        
-        };
-        
+        return today;        
+        }        
     return (
         <>
             <div className='modalCss'>
                 <div className='MMTmodal'>
-                  {success  &&  <h3 style={{textAlign:"center",marginTop:"10px",}}> <img src={Payment} alt="Success" style={{width:"30px",height:"30px",borderRadius:"20px"}} /> Payment Successfull</h3>}
-                        <div><h3 style={{textAlign:"center"}}>Fare Summary </h3></div>
+                  {success && <h3 style={{textAlign:"center",marginTop:"10px",}}> <img src={Payment} alt="Success" style={{width:"30px",height:"30px",borderRadius:"20px"}} /> Payment Successfull</h3>}
+                    <div><h3 style={{textAlign:"center"}}>Fare Summary </h3></div>
                     <div className='Fare'>
                         <div className='baseFare'>
                             <div ><b>Base Fare </b></div>
@@ -55,16 +48,11 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
                                 if(Namecard.length!==16){
                                     alert("valid name on card")
                                    }                               
-                                }         
-                           
-                        }
-
-                        onChange={ (e) => {setNamecard(e.target.value);
-                            // if(Namecard.length!==16){
-                            //     alert("valid name on card")
-                            // }
-                        console.log(Namecard);}}required />
-                    </div>
+                                }       
+                             }
+                           onChange={ (e) => {setNamecard(e.target.value);
+                           console.log(Namecard);}}required />
+                        </div>
                     <div className='PaymentInput'>
                         <input type="text" placeholder='Card Number' 
                         onSubmit={
@@ -77,29 +65,15 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
                         }
 
                         onChange={ (e) => {setCardnum(e.target.value)
-                            // if(Cardnum.length!==3){
-                            //     alert("valid card number")
-                            // }
+                            
                         console.log(Cvv)}}max="16"min="16" required/>
                     </div>
                     <div className='PaymentInput'>
                         <input type="date" placeholder='Expiry Date'
-                       min={minDate()}
-                        // onSubmit={
-                        //     ()=>{
-                        //         if(Exdate.length!==16){
-                        //             alert("valid expiry date")
-                        //            }                               
-                        //         }         
-                           
-                        // }
-
-                        onChange={ (e) => {setExdate(e.target.value)
-                            // if(Exdate.length!==16){
-                            //     alert("valid expiry date")
-                            // }
+                         min={minDate()}
+                        onChange={(e) => {setExdate(e.target.value)                            
                         console.log(Exdate)}} required />
-                    </div>
+                     </div>
                     <div className='PaymentInput'>
                         <input  type="text" placeholder='CVV' onSubmit={
                             ()=>{
@@ -111,27 +85,18 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
                         }
 
                         onChange={ (e) => {setCvv(e.target.value)
-                            // if(Cvv.length!==3){
-                            //     alert("valid cvv")
-                            // }
-                        console.log(Cvv)}}
-                        
-                            max="3" min="3" required/>
-                            
-                        
+                           
+                        console.log(Cvv)}}                        
+                         max="3"min="3"required/>              
                     </div>
                     <div className='btnPay'>
-                        <button style={{backgroundColor:"rgb(220,53,69)"}} onClick={cancel}>Cancel</button>
-                     
-                       {Namecard!=null&&Cardnum!=null&& Exdate!=null&&Cvv!=null&&<button onClick={()=>{setSuccess(true)}}>Pay</button>}
+                    <button style={{backgroundColor:"rgb(220,53,69)"}} onClick={cancel}>Cancel</button>                     
+                    {Namecard!=null&&Cardnum!=null&& Exdate!=null&&Cvv!=null&&<button onClick={()=>{setSuccess(true)}}>Pay</button>}
                     </div>
-
                 </div>
             </div>
         </>
-
-    )
-
+    );
 }
 
 export default Modal

@@ -1,4 +1,4 @@
-.ApiContentOuter{
+.ApiContentOuter {
     box-sizing: border-box;
   }
   
@@ -68,6 +68,7 @@ span.font {
     min-width: 0 !important;
     max-width: none !important;
     overflow-x: hidden;
+    font-size: 12px;
 }
 .BookBtn button{
     padding: 8px;
@@ -76,5 +77,47 @@ span.font {
     min-width: 0 !important;
     max-width: none !important;
     overflow-x: hidden;
+}
+.font {
+    font-size: 12px;
+    font-weight: 40;
+}
+
+span {
+    font-size: 12px;
+    color: gray;
+}
+
+span.font {
+    font-size: 12px;
+}
+.BookBtn{
+    position: absolute;
+    /* top: 222px;
+    left: 215px; */
+    top:75%;
+    left:30%;
+    /* width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important; */
+    overflow-x: hidden;
+   
+    
+}
+.BookBtn button{
+    padding: 8px;
+    font-size: 12px;
+    width: 130px;   
+    background: rgb(25,135,84);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    /* letter-spacing: 4px; */
+    word-spacing: 1px;
+}
+#rupees{
+    font-size: 12px;
+    color: green;
 }
 }

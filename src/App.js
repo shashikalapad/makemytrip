@@ -1,4 +1,4 @@
-import isLength from 'lodash/isLength';
+
 import React, { useState } from 'react';
 import './App.css';
 import ApiFetch from './components/FetchData/ApiFetch';
@@ -16,46 +16,43 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 export const DataParentContext = React.createContext();
 
 const App = () => {
-  const [LoginDetails, setLoginDetails] = useState([]);
-  // {localStorage.getItem.length===0?
-  // console.log("shashi", localStorage.getItem.length)
+  const [LoginDetails, setLoginDetails] = useState([]); 
+  //console.log("shashi", LoginDetails.length===0);
+  
   return (
     <>
-    {/* {localStorage.getItem.length===0?(  
-    <BrowserRouter>
-  <DataParentContext.Provider value={{ LoginDetails, setLoginDetails }} >
-    <Navbar/>
-    <Sidebar pageWrapID={"page-wrap"} outerContainerId={"outer-container"} />
-    <Routes>
-      <Route path='/login' element={<Login setLoginDetails={setLoginDetails} />}/>
-      
-      <Route path='/' element={<ApiFetch />} />
-      <Route path='/hotels' element={<Hotels />} />
-      <Route path='/trains' element={<TrainsApi />} />
-      <Route path='/*' element={<NotFound />} />
-    </Routes>
-    <Footer />
-  {/* </DataParentContext.Provider>
-</BrowserRouter>):( */} 
-
-  <BrowserRouter>
-       <DataParentContext.Provider value={{ LoginDetails, setLoginDetails }} >
-       <Navbar/>
-         <Sidebar pageWrapID={"page-wrap"} outerContainerId={"outer-container"} />
-         <Routes>
+      <BrowserRouter>
+        
+        <DataParentContext.Provider value={{ LoginDetails, setLoginDetails }} >
+       
+        <Navbar/>
+       
+       <Sidebar pageWrapID={"page-wrap"} outerContainerId={"outer-container"} />
+       
+        <Routes>
+       
            <Route path='/login' element={<Login setLoginDetails={setLoginDetails} />} />
-          <Route path='/signUp' element={<SignUp />} />
+       
+           <Route path='/signUp' element={<SignUp />} />
+
            <Route path='/' element={<ApiFetch />} />
+
            <Route path='/hotels' element={<Hotels />} />
+
            <Route path='/trains' element={<TrainsApi />} />
+
            <Route path='/*' element={<NotFound />} />
-         </Routes>
-         <Footer />
+
+        </Routes>
+
+        <Footer/>
+
        </DataParentContext.Provider>
-     </BrowserRouter>
-     {/* )} */}
-</>
- )
+
+      </BrowserRouter>
+
+      </>
+      ) 
  }
  export default App;
 
@@ -71,36 +68,3 @@ const App = () => {
 
 
 
-// localStorage.getItem.length===0? <BrowserRouter>
-//  <DataParentContext.Provider value={{ LoginDetails, setLoginDetails }} >
-//    <Navbar/>
-//    <Sidebar pageWrapID={"page-wrap"} outerContainerId={"outer-container"} />
-//    <Routes>
-//      <Route path='/login' element={<Login setLoginDetails={setLoginDetails} />}/>
-//       <Route path='/signUp' element={<SignUp />}/>        
-//      <Route path='/' element={<ApiFetch />} />
-//      <Route path='/hotels' element={<Hotels />} />
-//      <Route path='/trains' element={<TrainsApi />} />
-//      <Route path='/*' element={<NotFound />} />
-//    </Routes>
-//    <Footer />
-//  </DataParentContext.Provider>
-//  </BrowserRouter>
-
-// <BrowserRouter>
-//   <DataParentContext.Provider value={{ LoginDetails, setLoginDetails }} >
-//     <Navbar/>
-//     <Sidebar pageWrapID={"page-wrap"} outerContainerId={"outer-container"} />
-//     <Routes>
-//       <Route path='/login' element={<Login setLoginDetails={setLoginDetails} />}/>
-      
-//       <Route path='/' element={<ApiFetch />} />
-//       <Route path='/hotels' element={<Hotels />} />
-//       <Route path='/trains' element={<TrainsApi />} />
-//       <Route path='/*' element={<NotFound />} />
-//     </Routes>
-//     <Footer />
-//   </DataParentContext.Provider>
-// </BrowserRouter>)
-
-  
