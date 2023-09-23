@@ -74,10 +74,6 @@
     display: flex;
     justify-content: center;
     height: 490px;
-    /* width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    overflow-x: hidden; */
 }
 .mainLogin{
     border: 1px solid grey;

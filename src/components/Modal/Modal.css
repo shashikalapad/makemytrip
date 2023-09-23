@@ -60,20 +60,24 @@
         min-width: 0 !important;
         max-width: none !important;
         overflow-x: hidden;         
-    }    
-     .PaymentInput input {    
+    } 
+    .MMTmodal{
        
         width: 100% !important;
         min-width: 0 !important;
         max-width: none !important;
-        overflow-x: hidden;     
-    }
-  
-    .btnPay button{
-        margin:20px;
+        overflow-x: hidden;         
         
+    }   
+     .PaymentInput input {        
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
         overflow-x: hidden;     
-       
+    }  
+    .btnPay button {
+        margin:20px;        
+        overflow-x: hidden;      
     }
     .btnPay{
         text-align: center;
