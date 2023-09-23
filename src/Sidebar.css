@@ -71,15 +71,9 @@
   
   .bm-item:hover {
     color: #ffffff;
+  
   }
   
-   /* @media screen and (max-width: 55rem) {
-    .bm-burger-button {
-     display:;
-    } 
-  } */
- 
- 
   @media screen and (min-width: 1200px) {
     .bm-burger-button {
       display:none;
