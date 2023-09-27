@@ -62,8 +62,21 @@ span.font {
     font-size: 22px;
     color: green;
 }
-@media screen and (max-width:600px) {
-    .ApiContentInner {  
+@media screen and (max-width:768px) {
+    .ApiContentOuter {
+        width: 100%;
+        height: 300px;
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;       
+        width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    overflow-x: hidden;
+    }
+    .ApiContentInner {
+        padding-top: 20px;  
     width: 100% !important;
     min-width: 0 !important;
     max-width: none !important;
@@ -95,8 +108,8 @@ span.font {
     position: absolute;
     /* top: 222px;
     left: 215px; */
-    top:75%;
-    left:30%;
+    top:80%;
+    left:33%;
     /* width: 100% !important;
     min-width: 0 !important;
     max-width: none !important; */

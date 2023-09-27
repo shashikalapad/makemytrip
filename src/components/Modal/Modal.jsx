@@ -1,12 +1,12 @@
 import React,{useState} from 'react'
-//import ReactDom from 'react-dom';
+import ReactDom from 'react-dom';
 import './Modal.css'
 import Payment from "../../Logo/payment.png"
 const Modal = ({setData,data,modelData,index,fakeString}) => {
     const cancel = ()=>{
         let list = [...data]
        
-        list[index].isAnkur = !list[index].isAnkur
+        list[index].isShashi = !list[index].isShashi
         setData(list)       
     }
     
@@ -16,11 +16,19 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
     const [Cardnum,setCardnum]=useState("");
     const [Exdate,setExdate]=useState(new Date());
     const [Cvv, setCvv] = useState("");
+
+    let isNamecardEntered = false;
+    let isCardnumEntered = false;
+    let isExdateEntered = false;
+    let isCvvEntered = false;
+
         const minDate = ()=> {
         const today = new Date().toISOString().split('T')[0];
         console.log(today);
-        return today;        
-        }        
+        return today; 
+
+        }; 
+
     return (
         <>
             <div className='modalCss'>
@@ -50,7 +58,10 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
                                    }                               
                                 }       
                              }
-                           onChange={ (e) => {setNamecard(e.target.value);
+                           onChange={ (e) => {setNamecard(e.target.value)
+                              // if(Namecard.length!==16){
+                            //     alert("valid name on card")
+                            // }
                            console.log(Namecard);}}required />
                         </div>
                     <div className='PaymentInput'>
@@ -65,13 +76,26 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
                         }
 
                         onChange={ (e) => {setCardnum(e.target.value)
-                            
+                                 // if(Cardnum.length!==3){
+                            //     alert("valid card number")
+                            // }
                         console.log(Cvv)}}max="16"min="16" required/>
                     </div>
                     <div className='PaymentInput'>
                         <input type="date" placeholder='Expiry Date'
                          min={minDate()}
-                        onChange={(e) => {setExdate(e.target.value)                            
+                          // onSubmit={
+                        //     ()=>{
+                        //         if(Exdate.length!==16){
+                        //             alert("valid expiry date")
+                        //            }                               
+                        //         }         
+                           
+                        // }
+                        onChange={(e) => {setExdate(e.target.value)
+                             // if(Exdate.length!==16){
+                            //     alert("valid expiry date")
+                            // }                            
                         console.log(Exdate)}} required />
                      </div>
                     <div className='PaymentInput'>
@@ -85,18 +109,20 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
                         }
 
                         onChange={ (e) => {setCvv(e.target.value)
-                           
+                            // if(Exdate.length!==16){
+                            //     alert("valid expiry date")
+                            // }
                         console.log(Cvv)}}                        
                          max="3"min="3"required/>              
                     </div>
                     <div className='btnPay'>
                     <button style={{backgroundColor:"rgb(220,53,69)"}} onClick={cancel}>Cancel</button>                     
-                    {Namecard!=null&&Cardnum!=null&& Exdate!=null&&Cvv!=null&&<button onClick={()=>{setSuccess(true)}}>Pay</button>}
+                    {Namecard !=null && Cardnum !=null && Exdate !=null & Cvv !=null && <button onClick={()=>{setSuccess(true)}}>Pay</button>}
                     </div>
                 </div>
             </div>
         </>
-    );
+    )
 }
 
 export default Modal

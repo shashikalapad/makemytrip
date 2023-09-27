@@ -2,9 +2,13 @@ import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = () => { 
   return (
     <Menu>
+      <p className="menu-item" >
+     Shashi
+      </p>
+
       <a className="menu-item" href="/">
       Flights
       </a>

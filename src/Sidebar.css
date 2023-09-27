@@ -79,15 +79,15 @@
       display:none;
      } 
     }
-    @media only screen and (max-width:600px){
+    @media only screen and (max-width:768px){
       .bm-burger-button {
-        font-size:12px;
+         font-size:12px;
       }
       .bm-burger-button {       
         width: 18px;
         height: 15px;
         left: 12px;
-        top: 15px;
+        top: 25px;
       }
       .bm-burger-bars {
         font-size: 12px;

@@ -6,13 +6,13 @@ import SearchContent from '../Navbar/SearchContent';
 import { ColorRing } from 'react-loader-spinner';
 
 const ApiFetch = () => {
-    //const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const [data, setData] = useState([]);
     const [loader, setLoader] = useState(false);
 
     const popUp = (index) => {
         let list = [...data]
-        list[index].isAnkur = !list[index].isAnkur
+        list[index].isShashi = !list[index].isShashi
         setData(list)
        
     }
@@ -26,7 +26,7 @@ const ApiFetch = () => {
 
         setTimeout(() => {
             data.map((item) => [
-                item.isAnkur = false
+                item.isShashi = false
             ])
             setData(data);
             setLoader(false)
@@ -48,8 +48,8 @@ const ApiFetch = () => {
                 ariaLabel="blocks-loading"
                 wrapperStyle={{}}
                 wrapperClass="blocks-wrapper"
-                colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}/>
-                </div> :
+                colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                /></div> :
                 data.map((item, index) => (
                     <div key={index} className="ApiContentOuter">
                         <div className='ApiContentInner'>
@@ -72,7 +72,7 @@ const ApiFetch = () => {
                             <div className="BookBtn">
                                 <button onClick={() => popUp(index)}>BOOK NOW</button>
                                 {
-                                     item.isAnkur && <Modal setData={setData} index={index} data={data} modelData={item}  fakeString="flight"/>
+                                     item.isShashi && <Modal setData={setData} index={index} data={data} modelData={item}  fakeString="flight"/>
                                     } 
                             </div>
                         </div>
@@ -83,3 +83,5 @@ const ApiFetch = () => {
     )
 }
 export default ApiFetch
+
+

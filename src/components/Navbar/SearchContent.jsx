@@ -2,8 +2,7 @@ import React from 'react';
 import './SearchContent.css';
 import Optionss from './Optionss.jsx';
 
-
-const SearchContent = ({data}) => {
+const SearchContent = ( {data}) => {
   //console.log(data)
   return (
     <div className="SearchContentContainer">

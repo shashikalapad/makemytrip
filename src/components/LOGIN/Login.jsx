@@ -5,13 +5,18 @@ import Google from '../../Logo/Google.png'
 import { Link } from 'react-router-dom';
 // import { DataParentContext } from '../App';
 import { useNavigate } from 'react-router-dom';
+
 const Login = ({setLoginDetails}) => {
-      const navegate = useNavigate(); 
-       const [email,setEmail] = useState("");
-       const [password,setPassword] = useState("");
-        const LoginData = (e) => {
+    const navegate = useNavigate();
+    // const localContext = useContext(DataParentContext);
+    // const { LoginDetails, setLoginDetails } = localContext;
+   
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState(" ");
+  
+    const LoginData = (e) => {
         e.preventDefault();
-        if (email === localStorage.getItem("email") && password === localStorage.getItem("password")) {
+        if (email ===localStorage.getItem("email") && password === localStorage.getItem("password")) {
             let obj = [{
                 userName: localStorage.getItem("userName"),
                 email: localStorage.getItem("email"),
@@ -23,7 +28,8 @@ const Login = ({setLoginDetails}) => {
         }
 
     }
-    return (
+    return (      
+    
         <form>
             <div className='LoginContainer'>
                 <div className='mainLogin'>
@@ -47,13 +53,14 @@ const Login = ({setLoginDetails}) => {
                             <label htmlFor="" style={{ marginRight: "200px" }}>Password</label><br />
                             <input type="password" placeholder='Enter Password' onChange={(e) => setPassword(e.target.value)} required /><br />
                         </div>
-                        <button onClick={(e)=>LoginData(e)}>Log in</button>                       
-                        <p style={{ color: "rgb(13,110,253)", cursor:"pointer" }}>Forgot Password ?</p>
+                        <button onClick={(e)=>LoginData(e)}>Log in</button>
+                        <p style={{ color: "rgb(13,110,253)", cursor: "pointer" }}>Forgot Password ?</p>
                     </div>
                 </div>
             </div>
         </form>
-    )
+        
+    );
 }
 
-export default Login;
+export default Login

@@ -61,7 +61,7 @@
 .btnSearch button:hover{
     background-color: rgb(19,65,117);
 }
- @media only screen and (max-width:600px) {
+ @media only screen and (max-width:768px) {
     .SearchContentContainer {      
         width: 100% !important;
         min-width: 0 !important;
@@ -71,25 +71,47 @@
     }   
     .SearchContentSmall_container { 
         display:table;       
-        width: 100% !important;
+       width: 100% !important;
        min-width: 0 !important;
        max-width: none !important;
-       overflow-x: hidden;     
+       overflow-x: hidden; 
+       text-align: center;    
     }
     .BIDF{
-        position: absolute;
-        font-size: 12px;
+        /* position:fixed; */
+        font-size: 18px;
+        text-align: center;
+        word-wrap:nowrap;
         top: 40px;
-        left: 33%;   
+        left: 16%;   
         color: black;
     }
     .btnSearch{
     width: 100% !important;
     min-width: 0 !important;
     max-width: none !important;
-    overflow-x: hidden; 
-    position: absolute;  
-    left: 23%;
-    }    
+    overflow-x: hidden;  
+    left: 30%;
+     margin-top:-15%; 
+    }  
+    .labels {    
+        padding: 5px;
+        margin-left: 7px;
+        margin-right:7px;
+        font-size: 17px;
+        color: rgb(14, 13, 13);
+    }
+    .All{       
+        width: 200px;
+        height: 35px;
+        padding: 5px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 9px;
+        margin-top:10px; 
+        margin-bottom:10px;         
+        cursor: pointer;
+    }  
 
 } 

@@ -35,7 +35,7 @@
 .USA{
     font-size: 20px;
 }
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:768px) {
     .FooterAll {
         border: 1px solid black;
         padding-top: 25px;
@@ -43,9 +43,9 @@
         margin-bottom:20px;
         background-color: black;
         height: 150px;
-        /* width: 100% !important;
+        width: 100% !important;
         min-width: 0 !important;
         max-width: none !important;
-        overflow-x: hidden; */
+        overflow-x: hidden;
     }
 }

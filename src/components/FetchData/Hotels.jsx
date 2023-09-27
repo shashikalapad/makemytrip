@@ -7,8 +7,8 @@ import SearchContent from '../Navbar/SearchContent';
 import './ApiFetch.css';
 
 const Second=()=>{ 
-    console.log("danish");
-    return( <h1>danish</h1> ) 
+    console.log("shahi");
+    return( <h1>shashi</h1> ) 
 }
 
 const Hotels = () => {
@@ -20,7 +20,7 @@ const Hotels = () => {
     
     const popUp = (index) => {
         let list = [...data]
-        list[index].isAnkur = !list[index].isAnkur
+        list[index].isShashi= !list[index].isShashi
         setData(list)
         
         //setModelData(item)
@@ -32,7 +32,7 @@ const Hotels = () => {
         const data = await response.json();
         setTimeout(() => {
          data.map((item)=>[
-            item.isAnkur=false
+            item.isShashi=false
          ])
             setData(data);
             setLoader(false)
@@ -76,7 +76,7 @@ const Hotels = () => {
                                 <div className="BookBtn">   
                                     <button onClick={()=>popUp(index)}>BOOK NOW</button>
                                     {
-                                     item.isAnkur && <Modal setData={setData} index={index} data={data} modelData={item}  fakeString="hotel"/>
+                                     item.isShashi && <Modal setData={setData} index={index} data={data} modelData={item}  fakeString="hotel"/>
                                     }   
                                 </div>
                             </div>
