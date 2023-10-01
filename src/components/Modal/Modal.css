@@ -54,7 +54,7 @@
 .btnPay button{
     margin: 10px;
 }
-@media only screen and (max-width:768px) {  
+@media only screen and (max-width:600px) {  
     .modalCss {
         width: 100% !important;
         min-width: 0 !important;

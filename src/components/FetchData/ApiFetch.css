@@ -62,7 +62,7 @@ span.font {
     font-size: 22px;
     color: green;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:600px) {
     .ApiContentOuter {
         width: 100%;
         height: 300px;

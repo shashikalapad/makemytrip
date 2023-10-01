@@ -16,6 +16,10 @@ const Login = ({setLoginDetails}) => {
   
     const LoginData = (e) => {
         e.preventDefault();
+
+        console.log("shashikala");
+        console.log(email,password );
+        
         if (email ===localStorage.getItem("email") && password === localStorage.getItem("password")) {
             let obj = [{
                 userName: localStorage.getItem("userName"),

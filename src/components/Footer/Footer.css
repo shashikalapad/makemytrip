@@ -35,7 +35,7 @@
 .USA{
     font-size: 20px;
 }
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:600px) {
     .FooterAll {
         border: 1px solid black;
         padding-top: 25px;
