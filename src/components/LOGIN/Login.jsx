@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef,useState } from 'react'
 import './Login.css'
 import Facebook from '../../Logo/facebook.png'
 import Google from '../../Logo/Google.png'
@@ -13,14 +13,20 @@ const Login = ({setLoginDetails}) => {
    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState(" ");
+    // const email = useRef();
+    // const password = useRef();
   
     const LoginData = (e) => {
         e.preventDefault();
 
-        console.log("shashikala");
-        console.log(email,password );
+        // console.log("shashikala");
+        // console.log(email,password );
         
-        if (email ===localStorage.getItem("email") && password === localStorage.getItem("password")) {
+        if (email ===localStorage.getItem("email","abc@gmail.com") && password === localStorage.getItem("password","12345")) {
+            // if(email.current.value==="abc@gmail.com"&&password.current.value==="12345"){
+            //     localStorage.setItem("emailData","abc@gmail.com");
+            //     localStorage.setItem("passwordData","12345");
+
             let obj = [{
                 userName: localStorage.getItem("userName"),
                 email: localStorage.getItem("email"),
@@ -51,11 +57,15 @@ const Login = ({setLoginDetails}) => {
                     <div className='center'>
                         <div className='Email'>
                             <label htmlFor="" style={{ marginRight: "220px" }}>Email</label><br />
-                            <input type="email" placeholder='Enter Email' onChange={(e) => setEmail(e.target.value)} required /><br />
+                            <input type="text"  placeholder='Enter Email' 
+                            onChange={(e) => setEmail(e.target.value)}
+                             required /><br />
                         </div>
                         <div className='Email'>
                             <label htmlFor="" style={{ marginRight: "200px" }}>Password</label><br />
-                            <input type="password" placeholder='Enter Password' onChange={(e) => setPassword(e.target.value)} required /><br />
+                            <input type="password"  placeholder='Enter Password' 
+                             onChange={(e) => setPassword(e.target.value)}
+                             required  /><br />
                         </div>
                         <button onClick={(e)=>LoginData(e)}>Log in</button>
                         <p style={{ color: "rgb(13,110,253)", cursor: "pointer" }}>Forgot Password ?</p>
