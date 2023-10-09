@@ -6,55 +6,31 @@ import { Link } from 'react-router-dom';
 // import { DataParentContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 
-const Login = ({setLoginDetails}) => {
+ const Login = ({setLoginDetails}) => {
     const navegate = useNavigate();
     // const localContext = useContext(DataParentContext);
     // const { LoginDetails, setLoginDetails } = localContext;
    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState(" ");
-    
+  
     const LoginData = (e) => {
         e.preventDefault();
 
-        // console.log("shashikala");
-        // console.log(email,password );
-        function ValidateEmail(inputText)
-{
-var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-if(inputText.value.match(mailformat))
-{
-alert("Valid email address!");
-document.form1.text1.focus();
-return true;
-}
-else
-{
-alert("You have entered an invalid email address!");
-document.form1.text1.focus();
-return false;
-}
-}
-
-        
-        if (email ===localStorage.getItem("email") && password === localStorage.getItem("password")) {
-            // if(email.current.value==="abc@gmail.com"&&password.current.value==="12345"){
-         
-
-            let obj = [{
+        console.log("shashikala");
+        console.log(email,password );         
+  if (email ===localStorage.getItem("email") && password === localStorage.getItem("password")) {              
+            
+    let obj = [{
                 userName: localStorage.getItem("userName"),
                 email: localStorage.getItem("email"),
                 password: localStorage.getItem("password")
             }]
+
             setLoginDetails(obj)
             alert("Login Successfully");
-            navegate('/')
+            navegate('/')       
         }
-        else{
-            alert("You have entered an invalid email address!");
-             
-        }
-
     }
     return (      
     
