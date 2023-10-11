@@ -5,7 +5,7 @@ import "./Sidebar.css";
 const Sidebar = () => { 
   return (
     <Menu>
-      <p className="menu-item" >
+      <p className="menu-item"  href="/shashi">
      Shashi
       </p>
 

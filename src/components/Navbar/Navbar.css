@@ -49,8 +49,9 @@
     padding-right: 30px;
 }
 .btn-btn{
-    width: 70px;
+    width: 90px;
     padding: 5px;
+    word-spacing: normal;
     background-color: blueviolet;
 }
 @media only screen and (max-width:600px) {  

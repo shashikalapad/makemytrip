@@ -1,17 +1,35 @@
-import React, { useContext,useRef } from 'react';
+import React, { useContext, } from 'react';
 import './Navbar.css';
 import MMT from '../../Logo/MMTLogo.png';
 import Flight from '../../Logo/flight.svg';
 import Hotels from '../../Logo/hotels.svg';
 import Train from '../../Logo/trn.png';
+import {naveDropdown} from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 import { DataParentContext } from '../../App';
 
 import { Link } from 'react-router-dom';
 const Navbar = () => {
     const localContext = useContext(DataParentContext);
+    const navigate = useNavigate();
+    const localData = JSON.parse(localStorage.getItem("user") || null);
     // const { LoginDetails } = localContext;
-    //console.log("shiv",localContext)
+    // console.log("shiv",localContext)
+    function handleuser(){
+        if( localData === null){
+          // localStorage.removeItem("user");
+          navigate("/login")  
+          
+        }else if( localData !== null){
+          
+          localStorage.removeItem("user");
+       
+        // navigate("/")  
+        }
+        
+      }
+ 
    
     return (
 
@@ -29,9 +47,11 @@ const Navbar = () => {
             <Link className="navlinks" to="/trains"><img src= {Train} alt="Train-logo" />Trains</Link>
             {localContext.LoginDetails.length===0 && <Link className="navlinks" to="/login">Log In</Link>}
             <Link className="navlinks" to="/signUp">Sign Up</Link>
-            <div className='DashboardPortal'> 
-            {localContext.LoginDetails.length > 0 &&<button className='btn-btn'>{"Hi"+localContext.LoginDetails[0].userName}</button>}
-              </div>
+            <div className='DashboardPortal'>       
+      
+            {localContext.LoginDetails.length > 0 &&<button  onClick={handleuser}className='btn-btn'>{"Hi "+localContext.LoginDetails[0].userName} Log {localData!== null ? "in" : "out"}</button>}
+                    
+              </div> 
         </div>
 
     )
