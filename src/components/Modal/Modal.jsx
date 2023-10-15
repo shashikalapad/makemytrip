@@ -28,6 +28,36 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
         return today; 
 
         }; 
+        const formValidation = () => {       
+            if (Namecard === "") {
+              alert("Name Can't Be Blanck");
+              return false;
+            }           
+            
+             if (Cardnum === "") {             
+               alert ("Card number is Required");
+               return false;
+             }
+             if (Cardnum.length !==16) {             
+                alert ("Card number is Invalid");
+                return false;
+              }             
+            if (Exdate === " ") {
+             alert("Exdate Is Required");
+             return false;
+            }
+            if (Cvv==="") {
+                alert(" Cvv number is Required");
+                return false;
+               }
+            
+             if (Cvv.length!==3) {
+             alert("Invalid Cvv number");
+             return false;
+            }
+            return true;
+        
+        }
 
     return (
         <>
@@ -51,73 +81,79 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
                     </div>
                     <div><h3 style={{textAlign:"center"}}>Payment Method </h3></div>
                     <div className='PaymentInput'>
-                        <input type="text" placeholder='Name on Card' onSubmit={
-                            ()=>{
-                                if(Namecard.length!==16){
-                                    alert("valid name on card")
-                                   }                               
-                                }       
-                             }
+                        <input type="text" placeholder='Name on Card' 
+                        // onSubmit={
+                        //     ()=>{
+                        //         if(Namecard.length>0){
+                        //             alert("valid name on card")
+                        //            }                               
+                        //         }       
+                        //      }
                            onChange={ (e) => {setNamecard(e.target.value)
-                              // if(Namecard.length!==16){
+                            //   if(Namecard.length===16){
                             //     alert("valid name on card")
                             // }
-                           console.log(Namecard);}}required />
+                        //    console.log(Namecard);
+                           }}required />
                         </div>
                     <div className='PaymentInput'>
                         <input type="text" placeholder='Card Number' 
-                        onSubmit={
-                            ()=>{
-                                if(Cardnum.length!==16){
-                                    alert("valid card number")
-                                   }                               
-                                }         
-                           
-                        }
-
-                        onChange={ (e) => {setCardnum(e.target.value)
-                                 // if(Cardnum.length!==3){
-                            //     alert("valid card number")
-                            // }
-                        console.log(Cvv)}}max="16"min="16" required/>
-                    </div>
-                    <div className='PaymentInput'>
-                        <input type="date" placeholder='Expiry Date'
-                         min={minDate()}
-                          // onSubmit={
+                        // onSubmit={
                         //     ()=>{
-                        //         if(Exdate.length!==16){
-                        //             alert("valid expiry date")
+                        //         if(Cardnum.length===16){
+                        //             alert("valid card number")
                         //            }                               
                         //         }         
                            
                         // }
+
+                        onChange={ (e) => {setCardnum(e.target.value)
+                            //      if(Cardnum.length!==16){
+                            //     alert("valid card number")
+                            // }
+                        // console.log(Cvv)
+                        }}max="16"min="16" required/>
+                    </div>
+                    <div className='PaymentInput'>
+                        <input type="date" placeholder='Expiry Date'
+                         min={minDate()}
+                        //   onSubmit={
+                        //     ()=>{
+                        //         if(Exdate.length==16){
+                        //             alert("valid expiry date")
+                        //            }                               
+                        //         }         
+                           
+                        //  }
                         onChange={(e) => {setExdate(e.target.value)
-                             // if(Exdate.length!==16){
+                            //  if(Exdate.length!==16){
                             //     alert("valid expiry date")
-                            // }                            
-                        console.log(Exdate)}} required />
+                        //}                            
+                        // console.log(Exdate)
+                        }} required />
                      </div>
                     <div className='PaymentInput'>
-                        <input  type="text" placeholder='CVV' onSubmit={
-                            ()=>{
-                                if(Exdate.length!==16){
-                                    alert("valid expiry date")
-                                   }                               
-                                }         
+                        <input  type="text" placeholder='CVV' 
+                        // onSubmit={
+                        //     ()=>{
+                        //         if(Cvv.length===3){
+                        //             alert("valid cvv")
+                        //            }                               
+                        //         }         
                            
-                        }
+                        // }
 
                         onChange={ (e) => {setCvv(e.target.value)
                             // if(Exdate.length!==16){
                             //     alert("valid expiry date")
                             // }
-                        console.log(Cvv)}}                        
+                        // console.log(Cvv)
+                    }}                        
                          max="3"min="3"required/>              
                     </div>
                     <div className='btnPay'>
                     <button style={{backgroundColor:"rgb(220,53,69)"}} onClick={cancel}>Cancel</button>                     
-                    {Namecard !=null && Cardnum !=null && Exdate !=null & Cvv !=null && <button onClick={()=>{setSuccess(true)}}>Pay</button>}
+                    {Namecard !==null && Cardnum !==null && Exdate !==null & Cvv !==null && <button onClick={()=>{ formValidation();setSuccess(true)}}>Pay</button>}
                     </div>
                 </div>
             </div>

@@ -13,24 +13,36 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     const localContext = useContext(DataParentContext);
     const navigate = useNavigate();
+    
     const localData = JSON.parse(localStorage.getItem("user") || null);
     // const { LoginDetails } = localContext;
     // console.log("shiv",localContext)
-    function handleuser(){
+    function handleuser(x){
         if( localData === null){
-          // localStorage.removeItem("user");
-          navigate("/login")  
+          localStorage.removeItem(localContext.LoginDetails[0].userName);
+          localStorage.clear();
+          x.disable=true;
+          navigate("/")  
           
-        }else if( localData !== null){
-          
-          localStorage.removeItem("user");
-       
-        // navigate("/")  
         }
+        //      else if( localData !== null){
+          
+        //   localStorage.removeItem("user");
+      
+        //               navigate("/")  
+        // }
         
       }
+  
+      // function disable (x){
+      //   x.disabled=true;
+      // }
+      // function disable (x){
+      //   x.disable = true;
+      // }
+
  
-   
+  console.log(localStorage);
     return (
 
         <div  className='NavbarContainer'>         
@@ -42,15 +54,15 @@ const Navbar = () => {
             </div>
 
 
-            <Link className="navlinks" to="/"><img id="dd" src={Flight} alt="Flight-logo" />Flights</Link>
+{localContext.LoginDetails.length===0 && <Link className="navlinks" to="/"><img id="dd" src={Flight} alt="Flight-logo" />Flights</Link>}
             <Link className="navlinks" to="/hotels"><img src={Hotels} alt="Hotels-logo" />Hotels</Link>
             <Link className="navlinks" to="/trains"><img src= {Train} alt="Train-logo" />Trains</Link>
-            {localContext.LoginDetails.length===0 && <Link className="navlinks" to="/login">Log In</Link>}
+            <Link className="navlinks" to="/login">Log In</Link>
             <Link className="navlinks" to="/signUp">Sign Up</Link>
             <div className='DashboardPortal'>       
       
-            {localContext.LoginDetails.length > 0 &&<button  onClick={handleuser}className='btn-btn'>{"Hi "+localContext.LoginDetails[0].userName} Log {localData!== null ? "in" : "out"}</button>}
-                    
+            {localContext.LoginDetails.length > 0&& localStorage.length>0 &&<button  onClick={handleuser}className='btn-btn'>{"Hi "+localContext.LoginDetails[0].userName} Log {localData!== null ? "in" : "out"} </button>}
+           
               </div> 
         </div>
 
