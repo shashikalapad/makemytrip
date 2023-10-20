@@ -5,9 +5,9 @@ import "./Sidebar.css";
 const Sidebar = () => { 
   return (
     <Menu>
-      <p className="menu-item"  href="/shashi">
+      {/* <a className="menu-item"  href="/login">
      Shashi
-      </p>
+      </a> */}
 
       <a className="menu-item" href="/">
       Flights

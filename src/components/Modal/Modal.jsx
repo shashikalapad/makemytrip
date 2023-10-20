@@ -42,10 +42,12 @@ const Modal = ({setData,data,modelData,index,fakeString}) => {
                 alert ("Card number is Invalid");
                 return false;
               }             
-            if (Exdate === " ") {
-             alert("Exdate Is Required");
-             return false;
-            }
+            // if (Exdate === " ") {
+            //  alert("Exdate Is Required");
+            //  return false;
+            // }
+            minDate();
+          
             if (Cvv==="") {
                 alert(" Cvv number is Required");
                 return false;

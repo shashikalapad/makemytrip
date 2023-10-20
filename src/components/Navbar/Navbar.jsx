@@ -58,12 +58,12 @@ const Navbar = () => {
             <Link className="navlinks" to="/hotels"><img src={Hotels} alt="Hotels-logo" />Hotels</Link>
             <Link className="navlinks" to="/trains"><img src= {Train} alt="Train-logo" />Trains</Link>
             <Link className="navlinks" to="/login">Log In</Link>
-            <Link className="navlinks" to="/signUp">Sign Up</Link>
-            <div className='DashboardPortal'>       
+            <Link className="navlinks" to="/signUp">Sign Up</Link>            
+           <div className='DashboardPortal'>       
       
             {localContext.LoginDetails.length > 0&& localStorage.length>0 &&<button  onClick={handleuser}className='btn-btn'>{"Hi "+localContext.LoginDetails[0].userName} Log {localData!== null ? "in" : "out"} </button>}
            
-              </div> 
+              </div>
         </div>
 
     )
