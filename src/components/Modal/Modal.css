@@ -76,12 +76,22 @@
         overflow-x: hidden;     
     }  
     .btnPay button {
-        margin:20px;        
+        /* margin:10px;  */
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        overflow-x: hidden;  
+        margin-top: 5px;
+        margin-bottom: 2px;   
         overflow-x: hidden;     
     }
     .btnPay{
         text-align: center;
         width:25%;
         margin:auto;
+       
+        min-width: 0 !important;
+        max-width: none !important;
+        overflow-x: hidden;     
     }
 } 
